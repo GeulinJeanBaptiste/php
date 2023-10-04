@@ -8,6 +8,7 @@
 </head>
 
 <body>
-    <?php
-    $titre = "Un titre";
-    ?>
+    <h1><?= $titre ?></h1>
+</body>
+
+</html>
