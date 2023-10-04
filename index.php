@@ -68,7 +68,17 @@ $tableau = [
 // dd($tableau);
 // dbug($titre);
 
-define('HOST',);
+define('USER', 'Jon Doe'); // define (''); est une variable;
+define('NOTES', [12, 16, 2, 6]);
+define('ONLINE', true);
+define('AGE', 32);
+// echo USER; // la const avec echo
+// dd(USER); // la const  avec dd
+
+dd(AGE);
+
+
+
 
 
 
