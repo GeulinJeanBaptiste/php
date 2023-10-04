@@ -4,6 +4,7 @@
 
 // include_once './header.php';
 require './header.php';
+require './fonction.php';
 
 
 // un commentaire
@@ -55,11 +56,19 @@ echo '<p>' . $fruit1  . '<br>'  . $fruit2 . '</p>'; */
 // echo $resultat;
 
 
-echo $titre;
+// echo $titre;
 
+$tableau = [
+    "groupe",
+    23, 4.5,
+    false,
+    [1, 2, 3, true]
+];
 
+// dd($tableau);
+// dbug($titre);
 
-
+define('HOST',);
 
 
 
