@@ -8,7 +8,6 @@ function dbug($value)
     echo '</pre>';
 }
 
-dbug("Test");
 
 function dd($value)
 {
