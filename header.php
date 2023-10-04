@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="efr">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -8,3 +8,6 @@
 </head>
 
 <body>
+    <?php
+    $titre = "Un titre";
+    ?>
