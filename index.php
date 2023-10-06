@@ -21,11 +21,11 @@ dd($tabFusion[5][2]); */
 
 // Tableaux associatif
 
-$fruits = [
+/* $fruits = [
     'banane' => 'jaune',
     'pomme' => 'rouge',
     'kiwi' => 'vert',
-];
+]; */
 
 // dd($fruits['pomme']);
 
@@ -33,20 +33,26 @@ $fruits = [
 
 // dd($fruits);
 
-$chaine = implode(",", $fruits);
-$fruits2 = explode(",",$chaine);
-$phrase = "Une petite phrase courte.";
-$tabphrase = explode(" ",$phrase);
+// $chaine = implode(",", $fruits);
+// $fruits2 = explode(",",$chaine);
+// $phrase = "Une petite phrase courte.";
+// $tabphrase = explode(" ",$phrase);
 
-dd($tabphrase);
-
-
+// dd($tabphrase);
 
 
-
-
-
-
+$planetes = ['mars', 'terre', 'uranus', 'venus', 'jupiter', 'mercure'];
+$planetes2 = [
+    'm' => 'mars',
+    't' => 'terre',
+    'u' => 'uranus',
+    'v' => 'venus',
+    'j' => 'jupiter',
+    'm' => 'mercure'
+];
+dbug($planetes);
+sort($planetes);
+dd($planetes);
 
 
 
