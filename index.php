@@ -34,5 +34,23 @@ $fruits = [
 // dd($fruits);
 
 $chaine = implode(",", $fruits);
-dd($chaine);
+$fruits2 = explode(",",$chaine);
+$phrase = "Une petite phrase courte.";
+$tabphrase = explode(" ",$phrase);
+
+dd($tabphrase);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 require './index.view.php';
