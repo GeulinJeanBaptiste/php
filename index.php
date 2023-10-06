@@ -50,9 +50,9 @@ $planetes2 = [
     'j' => 'jupiter',
     'm' => 'mercure'
 ];
-dbug($planetes);
-sort($planetes);
-dd($planetes);
+dbug($planetes2);
+sort($planetes2);
+dd($planetes2);
 
 
 
