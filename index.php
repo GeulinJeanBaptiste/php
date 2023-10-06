@@ -3,7 +3,7 @@
 
 require './fonction.php';
 
-$titre = "Tableaux php";
+$titre = "Boucles php";
 
 
 
@@ -16,6 +16,26 @@ $planetes2 = [
     'j' => 'jupiter',
     'm' => 'mercure'
 ];
+
+dbug($planetes);
+
+/* foreach ($planetes as $planete) {
+    // echo "$planetes<br>";
+    echo ucwords($planete) . '<br>';
+}
+ */
+/* foreach ($planetes2 as $planete) {
+    // echo "$planetes<br>";
+    echo ucwords($planete) . '<br>';
+} */
+
+foreach($planetes as $clef => $valeur){
+    echo $clef . ' : ' . $valeur . '<br>';
+};
+foreach($planetes2 as $clef => $valeur){
+    echo $clef . ' : ' . $valeur . '<br>';
+};
+
 
 
 
