@@ -6,7 +6,7 @@ require './fonction.php';
 $titre = "Tableaux php";
 
 
-$tab1 = [];
+/* $tab1 = [];
 $notes = [12,14,6,10];
 
 $tab1[] = 'Janvier';
@@ -17,7 +17,22 @@ array_push($tab1, 'Voiture', 10.5, [45,true,'Truc']);
 
 $tabFusion = array_merge($tab1,$notes);
 dbug($tabFusion);
-dd($tabFusion[5][2]);
+dd($tabFusion[5][2]); */
 
+// Tableaux associatif
 
+$fruits = [
+    'banane' => 'jaune',
+    'pomme' => 'rouge',
+    'kiwi' => 'vert',
+];
+
+// dd($fruits['pomme']);
+
+// $fruits['poire'] = 'vert';
+
+// dd($fruits);
+
+$chaine = implode(",", $fruits);
+dd($chaine);
 require './index.view.php';
