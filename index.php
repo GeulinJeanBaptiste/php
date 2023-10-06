@@ -123,8 +123,22 @@ dbug($jsonPersonArrayPhp);
     </figcaption>
     </img>
 </figure>
-
-
 <?php
+$urlApi = ('https://pokeapi.co/api/v2/pokemon/ditto');
+$jsonApi = file_get_contents($urlApi);
+$jsonApiArray = json_decode($jsonApi, true);
+// dd($jsonApiArray['abilities'][0]['ability']['name']);
+
+
+
+
+
+
+
+
+
+
+
+
 require './index.view.php';
 ?>
