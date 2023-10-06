@@ -41,7 +41,7 @@ dd($tabFusion[5][2]); */
 // dd($tabphrase);
 
 
-$planetes = ['mars', 'terre', 'uranus', 'venus', 'jupiter', 'mercure'];
+/* $planetes = ['mars', 'terre', 'uranus', 'venus', 'jupiter', 'mercure'];
 $planetes2 = [
     'm' => 'mars',
     't' => 'terre',
@@ -52,10 +52,18 @@ $planetes2 = [
 ];
 dbug($planetes2);
 sort($planetes2);
-dd($planetes2);
+dd($planetes2); */
+
+$tab = [];
+$tab[] = ['A','B','C'];
+$tab[] = ['Q','R','T'];
+$tab[] = ['E','U','P','I'];
 
 
 
+// Ecrire le mot ceppic avec les lettres du tableau $tab;
+dd($tab);
+// C=2 E= 0 P=2 i=3;
 
 
 
