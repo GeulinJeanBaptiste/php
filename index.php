@@ -54,16 +54,48 @@ dbug($planetes2);
 sort($planetes2);
 dd($planetes2); */
 
-$tab = [];
-$tab[] = ['A', 'B', 'C'];
-$tab[] = ['Q', 'R', 'T'];
-$tab[] = ['E', 'U', 'P', 'I'];
+// $tab = [];
+// $tab[] = ['A', 'B', 'C'];
+// $tab[] = ['Q', 'R', 'T'];
+// $tab[] = ['E', 'U', 'P', 'I'];
 
 
-dbug($tab);
+// dbug($tab);
 // Ecrire le mot ceppic avec les lettres du tableau $tab;
-dd($tab[0][2].$tab[2][0].$tab[2][2].$tab[2][2].$tab[2][3].$tab[0][2]);
+// dd($tab[0][2].$tab[2][0].$tab[2][2].$tab[2][2].$tab[2][3].$tab[0][2]);
 // C=2 E= 0 P=2 i=3;
+
+$person1 = [
+    'nom' => 'Carle',
+    'prenom' => 'Awa',
+    'email' => 'cawa@wahoo.com'
+];
+
+$people = [
+    $person1,
+    [
+        'nom' => 'Mourad',
+        'prenom' => 'Michel',
+        'email' => 'moumi@caramail.com'
+    ],
+    [
+        'nom' => 'Dupond',
+        'prenom' => 'Lucie',
+        'email' => 'ludo@gimayle.com'
+    ]
+];
+
+dbug($people);
+dbug("Le prenom de " . $people[2]['prenom'] . " est " . $people[2]['nom']);
+dbug("L'email de ".$people[1]['prenom']." ".$people[1]['nom']." est ".$people[1]['email']);
+
+
+// Afficher les phrases suivantes :
+// Le nom de Lucie est Dupond.
+// L'email de Michel MOURAD est moumi@caramail.com.
+
+
+
 
 
 
