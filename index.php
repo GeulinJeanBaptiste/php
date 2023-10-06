@@ -125,7 +125,6 @@ dbug($jsonPersonArrayPhp);
 </figure>
 
 
-
 <?php
 require './index.view.php';
 ?>
