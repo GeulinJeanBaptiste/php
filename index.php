@@ -76,6 +76,28 @@ endif; */
 // ($votes > $votesprécédents) ? $votes-- : $votes++;
 // dbug($votes);
 
+$couleur = 'violet';
+/* switch ($couleur) {
+    case 'rouge':
+        echo 'Votre couleur favorite est le rouge';
+        break;
+    case 'bleu':
+        echo 'Votre couleur favorite est le bleu';
+        break;
+    case 'vert':
+        echo 'Votre couleur favorite est le vert';
+        break;
+    default:
+        echo 'Votre couleur favorite est ni le rouge, ni le bleu, ni le vert';
+} */
+
+$return_value = match($couleur) {
+    'rouge' => 'Votre couleur prefere est le rouge',
+    'bleu' => 'Votre couleur prefere est le bleu',
+    'vert'=>'Votre couleur prefere est le vert',
+    default =>'Votre couleur favorite est ni le rouge, ni le bleu, ni le vert',
+};
+dbug($return_value);
 
 
 
