@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function dbug($value)
 {
     echo '<pre style="background-color:black; color:white;overflow: auto;padding: 10px;">';
@@ -49,3 +51,26 @@ echo Age(1985); */
     return $anneeEnCours -$anneeNaissance;
 }
 echo calculAge(1990); */
+
+/* $calcul = function ($nb) {
+    return $nb + 1;
+};
+echo $calcul(25); */
+
+/* function calcul(int | float $a, int | float $b): mixed
+{
+    return $a + $b;
+}
+echo calcul(5.6, 7); */
+
+$x = 5;
+$y = 3;
+
+function calcul($xPasseEnParametre)
+{
+    // global $y;
+    $y = 7;
+    return $xPasseEnParametre + $y;
+}
+echo calcul(5);
+dd($y);
