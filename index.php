@@ -16,7 +16,7 @@ $titre = "Formulaire";
 
 <body>
     <h1>formulaire</h1>
-    <form action="./traitement.php" method="POST">
+    <form action="./traitement.php" method="GET">
         <label for="nom">Nom:</label>
         <input type="text" name="nom" required>
         <label for="email">Email:</label>

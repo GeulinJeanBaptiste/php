@@ -3,7 +3,12 @@ require './fonction.php';
 $titre = "Formulaire";
 
 // dbug($_POST);
-dbug($_REQUEST);
+// dbug($_REQUEST);
+dbug(htmlspecialchars($_GET['nom']));
+
+
+
+
 // Afficher des phrases avec des informations du formulaire: 
 // votre nom est :
 // votre email est :
