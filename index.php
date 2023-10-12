@@ -28,18 +28,18 @@ $user = [
 !==
 fin du commentaire */
 
-/* $age = 20;
-if ($age >= 18) {
-    echo 'peut voter. ';
-} else {
-    echo 'Ne peut pas voter !!!';
-}
-
-if ($age >= 18) :
-    echo 'peut voter. ';
-else :
-    echo 'Ne peut pas voter !!!';
-endif; */
+//  $age = 20;
+// if ($age >= 18) {
+//     echo 'peut voter. ';
+// } else {
+//     echo 'Ne peut pas voter !!!';
+// }
+// echo($age >=18) ? 'Peut voter' : 'Ne peut pas voter !'; 
+// if ($age >= 18) :
+//     echo 'peut voter. ';
+// else :
+//     echo 'Ne peut pas voter !!!';
+// endif; 
 
 /* $heure = 10;
 $heure = date('H');
@@ -54,12 +54,27 @@ else :
 endif; */
 
 
-$a = 20;
+/* $a = 20;
 $b = 5;
 
 if ($b === '5') :
     echo 'La variable $b n\'est pas égale à 5.';
-endif;
+endif; */
+
+/* $vrai = false;
+if ($vrai) :
+    echo 'Vrai';
+else :
+    echo 'Faux';
+endif; */
+
+/* echo $vrai ? 'Vrai' : 'Faux'; */
+
+// $votes = 7500;
+// dbug($votes);
+// $votesprécédents = 1254;
+// ($votes > $votesprécédents) ? $votes-- : $votes++;
+// dbug($votes);
 
 
 
