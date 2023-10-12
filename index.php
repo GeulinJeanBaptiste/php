@@ -2,14 +2,6 @@
 require './fonction.php';
 $titre = "Formulaire";
 
-// dbug($_POST);
-// Afficher des phrases avec des informations du formulaire: 
-// votre nom est :
-// votre email est :
-// votre commentaire est :
-// votre niveau est :
-// vos competences sont :
-
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +16,7 @@ $titre = "Formulaire";
 
 <body>
     <h1>formulaire</h1>
-    <form action="" method="POST">
+    <form action="./traitement.php" method="POST">
         <label for="nom">Nom:</label>
         <input type="text" name="nom" required>
         <label for="email">Email:</label>
@@ -51,14 +43,13 @@ $titre = "Formulaire";
 
 </html>
 
-
-
-
-
-
-
-
-
-
 <?php
+
+// echo "votre nom est " . $_POST["nom"] . ". ";
+// echo "votre email est " . $_POST["email"] . ". ";
+// echo "votre commentaire est " . $_POST["commentaire"] . ". ";
+// echo "votre niveau est  " . $_POST["niveau"];
+// $competence = implode(" ", $_POST["competence"]);
+// echo "vos competence sont  " . $competence;
+
 require './index.view.php';
