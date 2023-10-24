@@ -1,2 +1,4 @@
 <?php
-$dbh = new PDO('mysql:host=localhost;dbname=test', $user, $pass);
+$user = 'root';
+$pass = '';
+$connexion = new PDO('mysql:host=localhost;dbname=notes', $user, $pass);
