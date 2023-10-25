@@ -6,8 +6,9 @@
     <title>Note</title>
 </head>
 <body>
-    <h1>Note</h1>
-<h2><?=$note["title"]?></h2>
-    </ul>
+<h2><?=$note['title']?></h2>
+    <p><?=$note['content']?></p>
+    <p>Publiée le <?=$note['title']?> par <strong><?=$note['name']?></strong></p>
+    <p><a href="/notes">Retour à la liste des notes</a></p>
 </body>
 </html>
