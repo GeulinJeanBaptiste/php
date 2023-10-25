@@ -1,4 +1,4 @@
-<?php include "partials/header.php"; ?>
+<?php require "partials/header.php"; ?>
 
 <?php
 
@@ -20,4 +20,4 @@ foreach ($notes as $value) {
         <?php endforeach; ?>
     </ul>
 </body>
-<?php include "partials/footer.php"; ?>
+<?php require "partials/footer.php"; ?>
