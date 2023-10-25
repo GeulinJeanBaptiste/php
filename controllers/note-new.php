@@ -5,6 +5,20 @@ require 'models/Database.php';
 $users = $connexion->query('SELECT * FROM user')->fetchAll(PDO::FETCH_ASSOC);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
+    $title = filter_var(
+        $_POST['title'],
+        FILTER_SANITIZE_FULL_SPECIAL_CHARS
+    );
+    $content = filter_var(
+        $_POST['content'],
+        FILTER_SANITIZE_FULL_SPECIAL_CHARS
+    );
+    $user = filter_var(
+        $_POST['user'],
+        FILTER_SANITIZE_FULL_SPECIAL_CHARS
+    );
+        
+
     $noteNew = $connexion->prepare('INSERT INTO note (title,content,user_id)
     VALUES (:title , :content , :user_id)
     ');
@@ -15,6 +29,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     header('Location /notes');
     exit();
 endif;
-
 
 require 'views/note-new.view.php';
