@@ -1,16 +1,19 @@
 <?php require 'partials/header.php' ?>
 <h2>Ajouter une nouvelle note ici.</h2>
 
-<form action="">
+<form method="POST">
     <label for="titre">Titre</label>
     <input type="text" name="title" id="title">
     <label for="content">Contenu :</label>
     <textarea name="content" id="content" cols="30" rows="10"></textarea>
     <label for="user">Auteur</label>
     <select name="user" id="user">
-        <option value="1">John Doe</option>
-        <option value="2">Ben chiant</option>
-        <option value="3">Jane Doe</option>
+        <option value="" selected></option>
+        <?php
+        foreach ($users as $user) { ?>
+            <option value="<?= $user["user_id"] ?>"><?= $user["name"] ?></option>
+        <?php };
+        ?>
     </select>
     <input type="submit" value="Ajouter">
 </form>
