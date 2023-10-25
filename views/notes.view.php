@@ -16,11 +16,13 @@ foreach ($notes as $value) {
                 <a href="/note?id=<?= $note['id'] ?>">
                     <?= $note['title'] ?>
                 </a> -<a href="
-/note-delete?id=<?= $note['id'] ?> " onClick="return confirm ('Etes vous certain de vouloir supprimer cet note !?');">
-        X
-</a>
+/note-delete?id=<?= $note['id'] ?> 
+" onClick="return confirm ('Etes vous certain de vouloir supprimer cet note !?');">
+                    X
+                </a>
             </li>
         <?php endforeach; ?>
     </ul>
+    <p><a href="/note-new">Ajouter une note</a></p>
 </body>
 <?php require "partials/footer.php"; ?>

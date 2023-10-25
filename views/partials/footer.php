@@ -1,6 +1,6 @@
 <body>
     <footer>
-        <h1>FOOTER</h1>
+        <h4>ceci est un footer</h4>
     </footer>
 </body>
 </html>
