@@ -2,18 +2,16 @@
 
 <?php
 
-foreach ($notes as $value) {
-    echo $value["title"];
-};
 ?>
 
 <body>
     <h1>Notes</h1>
     <ul>
         <?php
+        $i = 1;
         foreach ($notes as $note) : ?>
             <li>
-                <a href="/note?id=<?= $note['id'] ?>">
+                <?= $i ?><a href="/note?id=<?= $note['id'] ?>">
                     <?= $note['title'] ?>
                 </a> -<a href="
 /note-delete?id=<?= $note['id'] ?> 
@@ -21,7 +19,9 @@ foreach ($notes as $value) {
                     X
                 </a>
             </li>
-        <?php endforeach; ?>
+        <?php
+            $i = $i + 1;
+        endforeach; ?>
     </ul>
     <p><a href="/note-new">Ajouter une note</a></p>
 </body>

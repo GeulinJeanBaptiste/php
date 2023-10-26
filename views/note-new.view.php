@@ -17,4 +17,11 @@
     </select>
     <input type="submit" value="Ajouter">
 </form>
+<?php if (isset($errors) && !empty($errors)) :
+
+?>
+    <p class="error"><?= $errors ?></p>
+<?php
+
+endif; ?>
 <?php require 'partials/footer.php' ?>
