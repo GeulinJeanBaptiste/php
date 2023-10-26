@@ -3,15 +3,20 @@
 
 <form method="POST">
     <label for="titre">Titre</label>
-    <input type="text" name="title" id="title">
+    <input type="text" name="title" id="title" value="<?php
+                                                        if (isset($_POST['title'])) :
+                                                            echo $_POST['title'];
+                                                        endif;  ?>">
     <label for="content">Contenu :</label>
-    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    <textarea name="content" id="content" cols="30" rows="10"><?php if (isset($_POST['content'])) : echo $_POST['content'];
+                                                                endif; ?></textarea>
     <label for="user">Auteur</label>
     <select name="user" id="user">
-        <option value="" selected></option>
+        <option value=""></option>
         <?php
         foreach ($users as $user) { ?>
-            <option value="<?= $user["user_id"] ?>"><?= $user["name"] ?></option>
+            <option value="<?= $user["user_id"] ?>" <?php if (isset($_POST['user']) && $_POST["user"] == $user["user_id"]) : echo "selected";
+                                                    endif; ?>><?= $user["name"] ?></option>
         <?php };
         ?>
     </select>
