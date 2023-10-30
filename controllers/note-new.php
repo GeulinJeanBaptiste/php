@@ -2,7 +2,7 @@
 
 require 'models/Database.php';
 $requete = 'SELECT * FROM user';
-$users = $connexion->query($requete)->fetchAll(PDO::FETCH_ASSOC);
+$users = $connexion->query($requete)->fetchAll();
 $errors = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
