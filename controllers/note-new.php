@@ -23,14 +23,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     endif;
     if (empty($errors)) :
         $noteNew = $connexion->prepare('INSERT INTO note (title,content,user_id)
-    VALUES (:title , :content , :user_id)
-    ');
-        $noteNew->bindParam(':title', $_POST['title']);
-        $noteNew->bindParam(':content', $_POST['content']);
-        $noteNew->bindParam(':user_id', $_POST['user']);
+    VALUES (:title , :content , :user_id)');
+        $noteNew->bindValue(':title', $title, PDO::PARAM_STR);
+        $noteNew->bindValue(':content', $content, PDO::PARAM_STR);
+        $noteNew->bindValue(':user_id', $author, PDO::PARAM_INT);
+
         $noteNew->execute();
-        header('Location: /notes');
-        exit();
+
+        $lastInsertId = $connexion->lastInsertId();
+        if ($lastInsertId) :
+            header('Location: /notes');
+            exit();
+        else :
+            abort();
+        endif;
     endif;
 endif;
 
