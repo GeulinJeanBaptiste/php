@@ -1,5 +1,5 @@
 <?php require 'partials/header.php' ?>
-<h2>Ajouter une nouvelle note ici.</h2>
+<h2>Modifier cette note</h2>
 
 <form method="POST">
     <label for="titre">Titre</label>
@@ -10,14 +10,14 @@
     <label for="user">Auteur</label>
     <select name="user" id="user">
         <option value=""></option>
-        <?php
-        foreach ($users as $user) { ?>
-            <option value="<?= $user["user_id"] ?>" <?php if (isset($_POST['user']) && $_POST["user"] == $user["user_id"]) : echo "selected";
+        <?php foreach ($users as $user) { ?>
+            <option value="<?= $user["user_id"] ?>"
+             <?php if (isset($_POST['user']) && $_POST["user"] == $user["user_id"]) : echo "selected";
                                                     endif; ?>><?= $user["name"] ?></option>
         <?php };
         ?>
     </select>
-    <input type="submit" value="Ajouter">
+    <input type="submit" value="Modifier">
 </form>
 <?php if (isset($errors) && !empty($errors)) :
 
