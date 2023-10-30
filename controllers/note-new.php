@@ -1,11 +1,11 @@
 <?php
 
-require 'models/Database.php';
-
-$users = $connexion->query('SELECT * FROM user')->fetchAll(PDO::FETCH_ASSOC);
-$errors = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
 
+    require 'models/Database.php';
+
+    $users = $connexion->query('SELECT * FROM user')->fetchAll(PDO::FETCH_ASSOC);
+    $errors = "";
     $title = trim(filter_var(
         $_POST['title'],
         FILTER_SANITIZE_FULL_SPECIAL_CHARS
