@@ -10,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
     $content = trim(filter_var($_POST['content'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
     $user = trim(filter_var($_POST['user'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-
-
+    
+    // strlen($title) >= 100 permet de limiter le titre à 100
     if (strlen($title) >= 100 || strlen($title) === 0  || (strlen($content) >= 1000 || strlen($title) === 0) || (empty($user))) :
         $errors = 'Contenu, titre ou utilisateur trop long ou non remplie';
     endif;

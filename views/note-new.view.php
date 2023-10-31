@@ -15,10 +15,8 @@
         <?php
 
         foreach ($users as $user) { ?>
-
             <option value="<?= $user["user_id"]
                             ?>" <?php
-
                                 if (isset($_POST['user'])) :
                                     $user_id = (int) $_POST['user'];
                                 endif;
