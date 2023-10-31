@@ -16,13 +16,15 @@
 
         foreach ($users as $user) { ?>
 
-            <option value="<?= $user["user_id"] ?>" <?php
-                                                    if (isset($_POST['user'])) :
-                                                        $user_id = (int) $_POST['user'];
-                                                    endif;
-                                                    if (isset($_POST['user']) && $_POST["user"] == $user["user_id"]) : echo "selected";
+            <option value="<?= $user["user_id"]
+                            ?>" <?php
 
-                                                    endif; ?>>
+                                if (isset($_POST['user'])) :
+                                    $user_id = (int) $_POST['user'];
+                                endif;
+                                if (isset($_POST['user']) && $_POST["user"] == $user["user_id"]) : echo "selected";
+                                endif;
+                                ?>>
                 <?= $user["name"] ?>
             </option>
         <?php };

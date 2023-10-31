@@ -1,7 +1,7 @@
 <?php
 require 'models/Database.php';
 
-if ( !isset($_GET['id']) || !is_numeric($_GET['id']) || empty($_GET['id']) ) :
+if (!isset($_GET['id']) || !is_numeric($_GET['id']) || empty($_GET['id'])) :
     abort();
 endif;
 
@@ -22,9 +22,8 @@ $note->bindParam(':id', $id);
 $note->execute();
 $note = $note->fetch();
 
-if ( empty($note) || $note === false ) :
+if (empty($note) || $note === false) :
     abort();
 endif;
-
 
 require 'views/note.view.php';
