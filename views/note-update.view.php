@@ -3,19 +3,27 @@
 
 <form method="POST">
     <label for="titre">Titre</label>
-    <input type="text" name="title" id="title" value="<?= isset($_POST['title']) ? $_POST['title'] : '' ?>">
+    <input type="text" name="title" id="title" value="<?= isset($_POST['title']) ? $_POST['title'] : $noteUpdate['title'] ?>">
     <label for="content">Contenu :</label>
     <textarea name="content" id="content" cols="30" rows="10"><?php if (isset($_POST['content'])) : echo $_POST['content'];
                                                                 endif; ?></textarea>
-    <label for="user">Auteur</label>
-    <select name="user" id="user">
+    <label for="author">Auteur :</label>
+    <select name="author" id="author">
         <option value=""></option>
-        <?php foreach ($users as $user) { ?>
-            <option value="<?= $user["user_id"] ?>"
-             <?php if (isset($_POST['user']) && $_POST["user"] == $user["user_id"]) : echo "selected";
-                                                    endif; ?>><?= $user["name"] ?></option>
-        <?php };
-        ?>
+
+        <?php foreach ($users as $user) : ?>
+
+            <option value="<?= $user['user_id'] ?>" <?php
+                                                    if (isset($_POST['author'])) :
+                                                        $author_id = (int) $_POST['author'];
+                                                    else :
+                                                        $author_id = (int) $noteUpdate['user_id'];
+                                                    endif;
+
+                                                    if (isset($author_id) && ($author_id === $user['user_id'])) :  ?> selected <?php endif; ?>>
+                <?= $user['name'] ?>
+            </option>
+        <?php endforeach; ?>
     </select>
     <input type="submit" value="Modifier">
 </form>

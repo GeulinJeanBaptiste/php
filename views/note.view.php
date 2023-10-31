@@ -3,7 +3,7 @@
 <p><?= $note['content'] ?></p>
 <p>Publiée le <?= $note['title'] ?> par <strong><?= $note['name'] ?></strong></p>
 
-<p><a href="/note-update" class="btn">Modifier cette note</a></p>
+<p><a href="/note-update?id=<?= $note['id'] ?>" class="btn">Modifier cette note</a></p>
 
 <p><a href="/note-delete?id=<?= $note['id'] ?> " onClick="return confirm ('Etes vous certain de vouloir supprimer cet note !?');">Supprimer cet note</a></p>
 <a href="/note-delete?id=<?= $note['id'] ?> " onClick="return confirm ('Etes vous certain de vouloir supprimer cet note !?');">

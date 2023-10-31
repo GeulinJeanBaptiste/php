@@ -10,13 +10,13 @@ $errors = "";
 // NOTE 
 
 
-if ( !isset($_GET['id']) || !is_numeric($_GET['id']) || empty($_GET['id']) ) :
+if (!isset($_GET['id']) || !is_numeric($_GET['id']) || empty($_GET['id'])) :
     abort();
 endif;
 
 $id = $_GET['id'];
 
-$note = $connexion->prepare('SELECT 
+$noteUpdate = $connexion->prepare('SELECT 
 n.id,
 u.user_id,
 n.title,
@@ -27,11 +27,12 @@ FROM note AS n
 INNER JOIN user AS u 
 ON n.user_id = u.user_id
 WHERE n.id = :id');
+
 $noteUpdate->bindParam(':id', $id);
 $noteUpdate->execute();
 $noteUpdate = $noteUpdate->fetch();
 
-if ( empty($note) || $note === false ) :
+if (empty($noteUpdate) || $noteUpdate === false) :
     abort();
 endif;
 
@@ -48,28 +49,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
         FILTER_SANITIZE_FULL_SPECIAL_CHARS
     ));
     $user = trim(filter_var(
-        $_POST['user'],
+        $_POST['author'],
         FILTER_SANITIZE_FULL_SPECIAL_CHARS
     ));
-    if (strlen($title) >= 10 || strlen($title) === 0  || (strlen($content) >= 1000 || strlen($title) === 0) || (empty($user))) :
+    $author = trim(filter_var(
+        $_POST['author'],
+        FILTER_SANITIZE_NUMBER_INT
+    ));
+    if (strlen($title) >= 100 || strlen($title) === 0  || (strlen($content) >= 1000 || strlen($title) === 0) || (empty($user))) :
         $errors = 'Contenu, titre ou utilisateur trop long ou non remplie';
     endif;
     if (empty($errors)) :
-        $noteNew = $connexion->prepare('INSERT INTO note (title,content,user_id)
-    VALUES (:title , :content , :user_id)');
+        // dd($_POST);
+        $noteNew = $connexion->prepare('UPDATE note SET title = :title ,content = :content ,user_id = :user_id WHERE id = :id');
         $noteNew->bindValue(':title', $title, PDO::PARAM_STR);
         $noteNew->bindValue(':content', $content, PDO::PARAM_STR);
         $noteNew->bindValue(':user_id', $author, PDO::PARAM_INT);
 
+        $noteNew->bindValue(':id', $id, PDO::PARAM_INT);
+
+
         $noteNew->execute();
 
-        $lastInsertId = $connexion->lastInsertId();
-        if ($lastInsertId) :
-            header('Location: /notes');
-            exit();
-        else :
-            abort();
-        endif;
+
+        header('Location: /notes');
+        exit();
+
     endif;
 endif;
 
