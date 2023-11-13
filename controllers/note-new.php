@@ -10,19 +10,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
     $content = trim(filter_var($_POST['content'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
     $user = trim(filter_var($_POST['user'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
-    
+
     // strlen($title) >= 100 permet de limiter le titre à 100
     if (strlen($title) >= 100 || strlen($title) === 0  || (strlen($content) >= 1000 || strlen($title) === 0) || (empty($user))) :
         $errors = 'Contenu, titre ou utilisateur trop long ou non remplie';
     endif;
 
+    // =====
+    // IMAGE
+    // =====
+
+    $target_dir = "uploads/";
+    $uploadfile = $target_dir . basename($_FILES['image']['name']);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
+        $imageInsert = basename($_FILES['image']['name']);
+    } else {
+        $errors[] = 'Erreur d\'upload avec votre image !!!';
+    };
+
+    // =====
+    // IMAGE
+    // =====
+
+
     if (empty($errors)) :
 
-        $noteNew = $connexion->prepare('INSERT INTO note (title,content,user_id)
-    VALUES (:title , :content , :user_id)');
+        $noteNew = $connexion->prepare('INSERT INTO note (title,content,user_id,image)
+        VALUES (:title , :content , :user_id, :image)');
         $noteNew->bindValue(':title', $title, PDO::PARAM_STR);
         $noteNew->bindValue(':content', $content, PDO::PARAM_STR);
         $noteNew->bindValue(':user_id', $user, PDO::PARAM_INT);
+        $noteNew->bindValue(':image', $imageInsert, PDO::PARAM_STR);
+
 
         $noteNew->execute();
 

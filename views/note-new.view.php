@@ -1,7 +1,9 @@
 <?php require 'partials/header.php' ?>
 <h2>Ajouter une nouvelle note ici.</h2>
 
-<form method="POST">
+
+
+<form method="POST" enctype="multipart/form-data">
     <label for="titre">Titre</label>
     <input type="text" name="title" id="title" value="<?= isset($_POST['title']) ? $_POST['title'] : '' ?>">
     <label for="content">Contenu :</label>
@@ -28,6 +30,17 @@
         <?php };
         ?>
     </select>
+
+    <!-- ===== -->
+    <!-- IMAGE -->
+    <!-- ===== -->
+    <label for="image">image</label>
+    <input type="file" name="image" id="image">
+    <!--     <input type="submit" value="Upload Image" name="submit"> -->
+    <!-- ===== -->
+    <!-- IMAGE -->
+    <!-- ===== -->
+
     <input type="submit" value="Ajouter">
 </form>
 <?php if (isset($errors) && !empty($errors)) :

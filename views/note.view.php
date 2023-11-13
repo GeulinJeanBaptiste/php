@@ -1,5 +1,14 @@
 <?php require 'partials/header.php' ?>
+
+
+
 <h2><?= $note['title'] ?></h2>
+
+<?php if ($note['image']) : ?>
+    <div>
+        <img src="uploads/<?= $note['image'] ?>" alt="">
+    </div>
+<?php endif; ?>
 <p><?= $note['content'] ?></p>
 <p>Publiée le <?= $note['title'] ?> par <strong><?= $note['name'] ?></strong></p>
 
