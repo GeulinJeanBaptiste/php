@@ -21,6 +21,4 @@
 <?php require 'partials/footer.php' ?>
 
 
-
-
 <!-- Faire une boucle avec <action> qui ramene les ID et user. -->
