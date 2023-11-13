@@ -6,7 +6,7 @@ $users = $connexion->query($requete)->fetchAll();
 // $errors = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $errors = [];
-    // dd($_POST);
+    /* Nettoyer les champs !!!! securité !!!! */
     $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
     $content = trim(filter_var($_POST['content'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
     $user = trim(filter_var($_POST['user'], FILTER_SANITIZE_FULL_SPECIAL_CHARS));
