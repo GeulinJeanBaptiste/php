@@ -15,8 +15,8 @@
                     <?= $note['title'] ?>
                 </a> -<a href="
 /note-delete?id=<?= $note['id'] ?> 
-" onClick="return confirm ('Etes vous certain de vouloir supprimer cet note !?');">
-                    X
+" class="supprimer" onClick="return confirm ('Etes vous certain de vouloir supprimer cet note !?');">
+                    x
                 </a>
             </li>
         <?php

@@ -9,6 +9,8 @@
         <img src="uploads/<?= $note['image'] ?>" alt="">
     </div>
 <?php endif; ?>
+
+
 <p><?= $note['content'] ?></p>
 <p>Publiée le <?= $note['title'] ?> par <strong><?= $note['name'] ?></strong></p>
 

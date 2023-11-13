@@ -3,6 +3,8 @@
 
 <form method="POST">
     <label for="titre">Titre</label>
+
+
     <input type="text" name="title" id="title" value="<?= isset($_POST['title']) ? $_POST['title'] : $noteUpdate['title'] ?>">
     <label for="content">Contenu :</label>
     <textarea name="content" id="content" cols="30" rows="10"><?php if (isset($_POST['content'])) : echo $_POST['content'];
@@ -25,6 +27,10 @@
             </option>
         <?php endforeach; ?>
     </select>
+    <div>
+        <label for="image">Modifier image</label>
+        <input type="file" name="image" id="image">
+    </div>
     <input type="submit" value="Modifier">
 </form>
 <?php if (isset($errors) && !empty($errors)) :

@@ -65,12 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
         $noteNew->bindValue(':title', $title, PDO::PARAM_STR);
         $noteNew->bindValue(':content', $content, PDO::PARAM_STR);
         $noteNew->bindValue(':user_id', $author, PDO::PARAM_INT);
-
         $noteNew->bindValue(':id', $id, PDO::PARAM_INT);
-
-
         $noteNew->execute();
-
 
         header('Location: /notes');
         exit();
