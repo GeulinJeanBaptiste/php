@@ -12,5 +12,6 @@
     <div id="header">
         <h2> Ceci est le Header</h2>
         <?php include 'nav.php' ?>
+        <?php   ?>
     </div>
 </body>

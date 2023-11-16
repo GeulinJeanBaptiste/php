@@ -16,11 +16,8 @@
     <!-- MOT DE PASSE -->
     <!--  -->
 
-
     <label for="motdepasse">mot de passe :</label>
     <input type="password" name="motdepasse" id="motdepasse">
-
-
 
     <!-- ===== -->
     <!-- SUBMIT -->
@@ -29,10 +26,11 @@
     <input type="submit" value="Connexion">
 </form>
 <?php if (isset($errors) && !empty($errors)) :
-
+    foreach ($errors as $error) :
 ?>
-    <p class="error"><?= $errors ?></p>
+        <p class="error"><?= $error ?></p>
 <?php
+    endforeach;
 
 endif; ?>
 

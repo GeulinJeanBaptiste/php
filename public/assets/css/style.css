@@ -8,7 +8,7 @@ body {
 #header {
   background-color: grey;
 }
-#header .navul{
+#header .navul {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
@@ -20,4 +20,3 @@ body {
 .supprimer {
   color: red;
 }
-
