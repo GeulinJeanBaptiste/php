@@ -30,11 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
         $loginUser = $loginUser->fetch();
 
         if (!is_array($loginUser)) :
-            $errors[] = 'Email ou Mot de passe oncorrect !';
+            $errors[] = 'Email ou Mot de passe incorrect !';
         else :
             // SESSION
-            $_SESSION['islogged'] = true;
+            $_SESSION['isLogged'] = true;
             $_SESSION['userId'] = $loginUser['user_id'];
+            $_SESSION['userRole'] = $loginUser['user_role'];
+
 
             header('Location: /notes');
             die();

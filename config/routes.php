@@ -9,5 +9,6 @@ $routes = [
   '/note-update' => 'controllers/note-update.php',
   '/admin' => 'controllers/admin/index.php',
   '/new-user' => 'controllers/new-user.php',
-  '/login' => 'controllers/login.php'
+  '/login' => 'controllers/login.php',
+  '/logout' => 'controllers/logout.php',
 ];
