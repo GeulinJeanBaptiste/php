@@ -1,3 +1,19 @@
 <?php
-require 'config/fonction.php';
-require 'core/routeur.php';
+//  COOKIE 
+//  COOKIE 
+//  COOKIE 
+
+
+// $value = "Valeur de test";
+
+// setcookie("TestCookie", $value);
+// setcookie("TestCookie", $value, time() + 3600);
+// setcookie("TestCookie", $value, time() - 3600);
+
+// echo $_COOKIE["TestCookie"];
+
+
+// Session
+// Session
+// Session
+
