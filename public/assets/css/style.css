@@ -8,9 +8,16 @@ body {
 #header {
   background-color: grey;
 }
+#header .navul{
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
 #footer {
   background-color: grey;
 }
 .supprimer {
   color: red;
 }
+
