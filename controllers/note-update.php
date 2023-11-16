@@ -22,6 +22,7 @@ u.user_id,
 n.title,
 n.content,
 n.created_at,
+n.image,
 u.name
 FROM note AS n
 INNER JOIN user AS u 
@@ -72,6 +73,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
         exit();
 
     endif;
+
+
+    //========
+    // IMAGE
+    //========
+    $uploaddir = "uploads/";
+    $uploadfile = $uploaddir . basename($_FILES['image']['name']);
+    $imageFileType = strtolower(pathinfo($uploadfile, PATHINFO_EXTENSION));
+
+    if (
+        $imageFileType != "jpg" &&
+        $imageFileType != "png" &&
+        $imageFileType != "jpeg"
+        && $imageFileType != "gif"
+    ) :
+        $errors[] =  "Le fichier téléversé n'est pas autorisé , seul les extensions suivantes sont autorisés :JPG, JPEG, PNG , GIF";
+    endif;
+
+    $fileError = $_FILES['image']['error'];
+
+    $phpFileUploadErrors = [
+        0 => 'Aucune erreur , le fichier est téléversé avec succés',
+        1 => 'Le fichier téléversé  dépasse la taille autorisé par PHP',
+        2 => 'Le fichier téléversé dépasse la taille autorisé par le formualire',
+        3 => 'Le fichier téléversé a été partiellement téléversé',
+        4 => 'Aucun fichier séléctionné',
+        6 => 'Dossier temporaire manquant',
+        7 => 'Echec d\'ecriture sur le disque dur',
+        8 => 'Un extension PHP a arrété le téléversement du fichier',
+    ];
+
+    if (array_key_exists($fileError, $phpFileUploadErrors)) :
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile) && $phpFileUploadErrors[0]) :
+            $imageInsert = basename($_FILES['image']['name']);
+        else :
+            $errors[] =  $phpFileUploadErrors[$fileError];
+        endif;
+    else :
+        $errors[] =  $phpFileUploadErrors[$fileError];
+    endif;
+
 endif;
 
 require 'views/note-update.view.php';

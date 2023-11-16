@@ -32,7 +32,17 @@
         <input type="file" name="image" id="image">
     </div>
     <input type="submit" value="Modifier">
+    <!------------>
+    <!-- IMAGE -->
+    <!------------>
+    <?php if ($noteUpdate['image']) : ?>
+        <p><img src="uploads/<?= $noteUpdate['image'] ?>" alt=""></p>
+    <?php endif; ?>
+    <label for="image">Image</label>
+    <input type="file" name="image" id="image">
 </form>
+
+<!-- ERREUR -->
 <?php if (isset($errors) && !empty($errors)) :
 
 ?>
