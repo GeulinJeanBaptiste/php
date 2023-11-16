@@ -1,19 +1,10 @@
 <?php
-//  COOKIE 
-//  COOKIE 
-//  COOKIE 
 
+session_start();
 
-// $value = "Valeur de test";
+// $_SESSION['CouleurFavorite'] = 'vert';
+$_SESSION['isConnected'] = true;
 
-// setcookie("TestCookie", $value);
-// setcookie("TestCookie", $value, time() + 3600);
-// setcookie("TestCookie", $value, time() - 3600);
-
-// echo $_COOKIE["TestCookie"];
-
-
-// Session
-// Session
-// Session
-
+?>
+<p><a href="./session.php">Lire la variable session</a></p>
+<p><a href="./kill_session.php">Tuer la session</a></p>
